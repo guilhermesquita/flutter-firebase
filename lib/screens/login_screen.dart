@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/screens/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -47,7 +48,17 @@ class LoginScreen extends StatelessWidget {
                     child: Text('Entrar com google'),
                   ),
                   const SizedBox(height: 20),
-                  TextButton(onPressed: () {}, child: Text('Criar uma conta'))
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegisterScreen(),
+                        ),
+                      );
+                    },
+                    child: Text('Criar uma conta'),
+                  )
                 ],
               ),
             ),
