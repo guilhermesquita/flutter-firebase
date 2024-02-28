@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_1/screens/login_screen.dart';
+import 'package:project_1/services/roteador_telas.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -12,13 +12,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Timer',
+      title: 'Horas V3',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
+        primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
-      home: LoginScreen(),
+      home: RoteadorTelas(),
     );
   }
 }
