@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/services/services_auth.dart';
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
@@ -7,6 +8,8 @@ class RegisterScreen extends StatelessWidget {
   final _senhaController = TextEditingController();
   final _confirmaSenhaController = TextEditingController();
   final _nomeController = TextEditingController();
+
+  AuthService authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
