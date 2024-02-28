@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:project_1/components/menu.dart';
+import 'package:project_1/helpers/hour_helpers.dart';
 import 'package:project_1/models/Hour.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -73,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             size: 56,
                           ),
                           title: Text(
-                            'Data: ${model.data} hora:${model.minutos}',
+                            'Data: ${model.data} hora:${HourHelpers.minutesToHours(model.minutos)}',
                           ),
                           subtitle: Text(model.descricao!),
                         )
