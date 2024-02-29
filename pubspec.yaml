@@ -40,6 +40,8 @@ dependencies:
   firebase_messaging: ^14.7.16
   google_sign_in: ^6.2.1
   cloud_firestore: ^4.15.6
+  mask_text_input_formatter: ^2.9.0
+  uuid: ^4.3.3
 
 dev_dependencies:
   flutter_test:
