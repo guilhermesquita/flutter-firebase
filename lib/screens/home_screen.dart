@@ -24,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    refresh();
   }
 
   @override
@@ -75,7 +76,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           ListTile(
-                            onLongPress: () {},
+                            onLongPress: () {
+                              showFormModal(model: model);
+                            },
                             onTap: () {},
                             leading: const Icon(
                               Icons.list_alt_rounded,
@@ -220,5 +223,17 @@ class _HomeScreenState extends State<HomeScreen> {
     refresh();
   }
 
-  void refresh() {}
+  Future<void> refresh() async {
+    // double total = 0;
+    List<Hour> temp = [];
+
+    QuerySnapshot<Map<String, dynamic>> snapshot =
+        await firestore.collection(widget.user.uid).get();
+    for (var doc in snapshot.docs) {
+      temp.add(Hour.fromMap(doc.data()));
+    }
+    setState(() {
+      listHours = temp;
+    });
+  }
 }
