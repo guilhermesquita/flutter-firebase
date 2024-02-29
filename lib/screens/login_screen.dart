@@ -51,10 +51,10 @@ class LoginScreen extends StatelessWidget {
                                 email: _emailController.text,
                                 senha: _senhaController.text)
                             .then(
-                          (String? erro) {
-                            if (erro != null) {
+                          (String? error) {
+                            if (error != null) {
                               final snackBar = SnackBar(
-                                content: Text(erro),
+                                content: Text(error),
                                 backgroundColor: Colors.red,
                               );
                               ScaffoldMessenger.of(context)
